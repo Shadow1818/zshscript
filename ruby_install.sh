@@ -1,5 +1,5 @@
 #!/bin/zsh
-#ruby install script
+#this script is install ruby 
 if [ "`id | grep root`" = ""];then
 	echo "pleas login root"
 	exit 1
