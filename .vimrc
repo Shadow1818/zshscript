@@ -17,8 +17,7 @@ set showmode
 set showcmd
 set list
 set listchars=tab:>-,eol:$,trail:+,extends:»,nbsp:%,precedes:«
-" 全角スペース・行末のスペース・タブの可視化
-highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
+highlight JpSpace cterm=underline ctermfg=7 guifg=7$
 au BufRead,BufNew * match JpSpace /　/
 set ts=3
 set shiftwidth=1
