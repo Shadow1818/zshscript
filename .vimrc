@@ -16,7 +16,7 @@ set showmatch
 set showmode
 set showcmd
 set list
-set listchars=tab:>-,eol:$,trail:-,extends:»,nbsp:%,precedes:«
+set listchars=tab:>-,eol:$,trail:+,extends:»,nbsp:%,precedes:«
 " 全角スペース・行末のスペース・タブの可視化
 if has("syntax")
     syntax on
@@ -28,12 +28,12 @@ if has("syntax")
         # 下の行の"　"は全角スペース
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
         highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
-        "syntax match InvisibleTrailedSpace "□\+$" display containedin=ALL
+        "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
         "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
         "syntax match InvisibleTab "\t" display containedin=ALL
         "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
     endfunction
- 
+    
     augroup invisible
         autocmd! invisible
         autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
